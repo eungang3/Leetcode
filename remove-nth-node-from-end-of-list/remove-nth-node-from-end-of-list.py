@@ -10,16 +10,15 @@ class Solution:
         
         for i in range(n):
             if not fast.next:
-                if i == n - 1:
+                if n - 1 == i:
                     head = head.next
-                    return head 
+                    return head
             fast = fast.next
             
         while fast.next:
-            slow = slow.next
             fast = fast.next
-            
-        if slow.next:
-            slow.next = slow.next.next
-            
+            slow = slow.next
+
+        slow.next = slow.next.next
         return head
+        
