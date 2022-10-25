@@ -7,14 +7,11 @@ class MyCircularQueue:
         self.rear_index = -1 
 
     def enQueue(self, value: int) -> bool:
-         # 1) 큐에 자리 있는지 확인
         if self.isFull():
             return False
         
-        # 2) 
-        rear_index = (self.rear_index + 1) % self.max_length
-        self.queue[rear_index] = value
-        self.rear_index = rear_index
+        self.rear_index = (self.rear_index + 1) % self.max_length
+        self.queue[self.rear_index] = value
         self.current_length += 1
         if self.current_length == 1:
             self.front_index = 0
