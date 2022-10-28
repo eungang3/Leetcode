@@ -2,7 +2,7 @@ class Solution:
     def openLock(self, deadends, target):
         dead_set = set(deadends)
         queue = collections.deque([('0000', 0)])
-        visited = set('0000')
+        visited = set(['0000'])
 
         while queue:
             string, steps = queue.popleft()
