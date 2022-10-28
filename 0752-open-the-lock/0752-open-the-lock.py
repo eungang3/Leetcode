@@ -1,16 +1,11 @@
 class Solution:
     def openLock(self, deadends, target):
-        """
-        :type deadends: List[str]
-        :type target: str
-        :rtype: int
-        """
         dead_set = set(deadends)
         queue = collections.deque([('0000', 0)])
         visited = set('0000')
 
         while queue:
-            (string, steps) = queue.popleft()
+            string, steps = queue.popleft()
             if string == target:
                 return steps
             elif string in dead_set:
