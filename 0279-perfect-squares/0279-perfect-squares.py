@@ -20,4 +20,4 @@ class Solution:
                     queue.append(rest)
                     base += 1
                 
-        return count
+        return depth
