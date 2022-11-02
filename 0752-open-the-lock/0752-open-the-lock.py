@@ -1,26 +1,26 @@
 class Solution:
-    def openLock(self, deadends, target):
-        dead_set = set(deadends)
-        queue = collections.deque([('0000', 0)])
+    def openLock(self, deadends: List[str], target: str) -> int:
+        deadends = set(deadends)
         visited = set(['0000'])
+        queue = collections.deque([('0000', 0)])
         
         while queue:
             string, steps = queue.popleft()
             
+            if string in deadends:
+                continue
+                
             if string == target:
                 return steps
             
-            if string in dead_set:
-                continue
-                
             for i in range(4):
-                digit = int(string[i])
+                digit = string[i]
                 
-                for move in ([-1, 1]):
-                    new_digit = (digit + move) % 10
+                for move in [-1, 1]:
+                    new_digit = (int(digit) + move) % 10
                     new_string = string[:i] + str(new_digit) + string[i+1:]
                     
-                    if new_string not in visited:
+                    if not new_string in visited:
                         visited.add(new_string)
                         queue.append((new_string, steps + 1))
                         
