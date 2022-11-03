@@ -11,7 +11,7 @@ class Solution:
             for direction in directions:
                 new_i, new_j = row + direction[0], col + direction[1]
                 
-                if (0 <= new_i < row_length) and (0 <= new_j < column_length) and grid[new_i][new_j] == '1':
+                if 0 <= new_i < row_length and 0 <= new_j < column_length and grid[new_i][new_j] == '1':
                     grid[new_i][new_j] = 0
                     queue.append((new_i, new_j))
     
