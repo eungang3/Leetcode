@@ -3,7 +3,7 @@ class Solution:
         result = []
         
         while matrix and matrix[0]:
-            if matrix[0]:
+            if matrix and matrix[0]:
                 result += matrix.pop(0)
                 
             if matrix and matrix[0]:
