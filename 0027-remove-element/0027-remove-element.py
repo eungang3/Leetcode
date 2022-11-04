@@ -6,5 +6,5 @@ class Solution:
             if nums[i] != val:
                 nums[i], nums[val_index] = nums[val_index], nums[i]
                 val_index += 1
-            
+                
         return val_index
