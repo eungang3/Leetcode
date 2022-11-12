@@ -9,7 +9,7 @@ class Solution:
             if matrix and matrix[0]:
                 for row in matrix:
                     result.append(row.pop())
-                    
+            
             if matrix and matrix[0]:
                 result += matrix.pop()[::-1]
                 
