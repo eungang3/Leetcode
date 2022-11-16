@@ -8,19 +8,23 @@ class Solution:
     def insertIntoBST(self, root: Optional[TreeNode], val: int) -> Optional[TreeNode]:
         if not root:
             root = TreeNode(val)
-            return root
-        def recursive_insert(root_node):
-            if val < root_node.val:
-                if root_node.left:
-                    recursive_insert(root_node.left)
+            return root 
+        
+        def insert(root, val):
+            new_node = TreeNode(val)
+            
+            if val < root.val:
+                if root.left:
+                    insert(root.left, val)
                 else:
-                    root_node.left = TreeNode(val)
+                    root.left = new_node
+                    
             else:
-                if root_node.right:
-                    recursive_insert(root_node.right)
+                if root.right:
+                    insert(root.right, val)
+                    
                 else:
-                    root_node.right = TreeNode(val)
-        
-        recursive_insert(root)
-        
+                    root.right = new_node
+            
+        insert(root, val)
         return root
