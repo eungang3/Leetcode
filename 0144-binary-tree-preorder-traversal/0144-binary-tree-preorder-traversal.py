@@ -9,13 +9,14 @@ class Solution:
         result = []
         stack = []
         
-        while stack or root:
+        while root or stack:
             if root:
-                stack.append(root)
                 result.append(root.val)
+                stack.append(root)
                 root = root.left
+                
             else:
                 root = stack.pop()
                 root = root.right
-        
+                
         return result
