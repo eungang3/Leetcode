@@ -13,8 +13,11 @@ class Solution:
             if root:
                 stack.append(root)
                 root = root.left
+                
             else:
-                temp = stack.pop()
-                result.append(temp.val)
-                root = temp.right
+                popped = stack.pop()
+                result.append(popped.val)
+                root = popped.right
+                
         return result
+                
